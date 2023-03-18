@@ -182,6 +182,9 @@ resource "aws_vpc_security_group_ingress_rule" "cyber_home" {
   tags                   = {
     "Name" = "Home IP address"
   }
+  depends_on = [
+    aws_security_group.cyber_default
+  ]
 }
 
 resource "aws_vpc_security_group_ingress_rule" "cyber_nos_enta" {
@@ -192,6 +195,9 @@ resource "aws_vpc_security_group_ingress_rule" "cyber_nos_enta" {
   tags                   = {
     "Name" = "ENTA NOS IP address"
   }
+  depends_on = [
+    aws_security_group.cyber_default
+  ]
 }
 
 
@@ -203,6 +209,9 @@ resource "aws_vpc_security_group_ingress_rule" "cyber_meo_enta" {
   tags                   = {
     "Name" = "ENTA MEO IP address"
   }
+  depends_on = [
+    aws_security_group.cyber_default
+  ]
 }
 
 resource "aws_instance" "desktop" {
