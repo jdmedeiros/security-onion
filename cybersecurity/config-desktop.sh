@@ -27,4 +27,5 @@
   chown ubuntu:ubuntu /home/ubuntu/.xsession
   systemctl enable --now xrdp
 
+  shutdown -hr 1
 fi

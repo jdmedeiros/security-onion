@@ -80,14 +80,8 @@ data "template_cloudinit_config" "config-onion" {
   }
 
   part {
-    filename = var.config-netplan-1
+    filename = var.config-netplan
     content_type = "text/x-shellscript"
-    content = file(var.config-netplan-1)
-  }
-
-  part {
-    filename = var.config-netplan-2
-    content_type = "text/x-shellscript"
-    content = file(var.config-netplan-2)
+    content = file(var.config-netplan)
   }
 }

@@ -9,9 +9,6 @@ if [ "$1" = "run" ]; then
   trap 'exec 2>&4 1>&3' 0 1 2 3
   exec 1>$SCRIPT_LOG_DETAIL 2>&1
 
-  patch /etc/netplan/50-cloud-init.yaml < /var/lib/cloud/instance/scripts/50-cloud-init.yaml_1.patch
-  netplan apply
-  sleep 30
   hostnamectl set-hostname onion
 
   # Debconf needs to be told to accept that user interaction is not desired
@@ -29,7 +26,7 @@ if [ "$1" = "run" ]; then
 
   mv /etc/netplan/50-cloud-init.yaml /etc/netplan/01-network-manager-all.yaml
   sudo touch /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
-  patch /etc/netplan/01-network-manager-all.yaml < /var/lib/cloud/instance/scripts/50-cloud-init.yaml_2.patch
+  patch /etc/netplan/01-network-manager-all.yaml < /var/lib/cloud/instance/scripts/50-cloud-init.yaml.patch
   systemctl enable --now NetworkManager
   netplan apply
   mkdir /mnt/efs
@@ -52,4 +49,5 @@ if [ "$1" = "run" ]; then
   swapon /swapfile
   echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
+  shutdown -hr 1
 fi

@@ -45,7 +45,7 @@ resource "aws_network_interface" "onion_nic_private1" {
 }
 
 resource "aws_network_interface" "onion_nic_private2" {
-  private_ips         = ["10.0.1.11"]
+  private_ips         = ["10.0.2.11"]
   security_groups    = [
     aws_security_group.cyber_default.id,
   ]
@@ -57,7 +57,7 @@ resource "aws_network_interface" "onion_nic_private2" {
 }
 
 resource "aws_network_interface" "onion_nic_private3" {
-  private_ips         = ["10.0.1.11"]
+  private_ips         = ["10.0.3.11"]
   security_groups    = [
     aws_security_group.cyber_default.id,
   ]

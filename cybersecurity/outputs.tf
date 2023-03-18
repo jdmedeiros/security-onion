@@ -18,3 +18,6 @@ output "eip_desktop" {
   value = aws_eip.cyber_public_ip.public_ip
 }
 
+output "eip_onion" {
+  value = aws_eip.onion_public_ip.public_ip
+}
