@@ -1,0 +1,8 @@
+@@ -4,6 +4,7 @@
+ # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+ # network: {config: disabled}
+ network:
++    renderer: NetworkManager
+     ethernets:
+         ens5:
+             dhcp4: true
