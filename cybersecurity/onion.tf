@@ -27,8 +27,7 @@ resource "aws_instance" "onion" {
   }
   user_data = data.template_cloudinit_config.config-onion.rendered
   depends_on = [
-    aws_efs_mount_target.onion2-mnt1,
-    aws_instance.desktop
+    aws_efs_mount_target.onion2-mnt1
   ]
 }
 
@@ -38,7 +37,7 @@ resource "aws_network_interface" "onion_nic_private1" {
     aws_security_group.cyber_default.id,
   ]
   source_dest_check  = false
-  subnet_id          = aws_subnet.cyber_private1.id
+  subnet_id          = aws_subnet.subnet_private1.id
   tags                                 = {
     "Name" = "CyberSecurity onion private1 interface"
   }
@@ -50,7 +49,7 @@ resource "aws_network_interface" "onion_nic_private2" {
     aws_security_group.cyber_default.id,
   ]
   source_dest_check  = false
-  subnet_id          = aws_subnet.cyber_private2.id
+  subnet_id          = aws_subnet.subnet_private2.id
   tags                                 = {
     "Name" = "CyberSecurity onion private2 interface"
   }
@@ -62,7 +61,7 @@ resource "aws_network_interface" "onion_nic_private3" {
     aws_security_group.cyber_default.id,
   ]
   source_dest_check  = false
-  subnet_id          = aws_subnet.cyber_private3.id
+  subnet_id          = aws_subnet.subnet_private3.id
   tags                                 = {
     "Name" = "CyberSecurity onion private3 interface"
   }
@@ -74,7 +73,7 @@ resource "aws_network_interface" "onion_nic_public1" {
     aws_security_group.cyber_default.id,
   ]
   source_dest_check  = false
-  subnet_id          = aws_subnet.cyber_public1.id
+  subnet_id          = aws_subnet.subnet_public1.id
   tags                                 = {
     "Name" = "CyberSecurity Onion public interface"
   }

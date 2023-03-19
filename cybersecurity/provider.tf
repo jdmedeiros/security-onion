@@ -85,3 +85,26 @@ data "template_cloudinit_config" "config-onion" {
     content = file(var.config-netplan)
   }
 }
+
+data "template_cloudinit_config" "config-analyst" {
+  gzip = false
+  base64_encode = false
+
+  part {
+    filename = var.cloud_config_desktop
+    content_type = "text/x-shellscript"
+    content = file(var.cloud_config_desktop)
+  }
+
+  part {
+    filename = var.config-desktop
+    content_type = "text/x-shellscript"
+    content = file(var.config-desktop)
+  }
+
+  part {
+    filename = var.config-onion
+    content_type = "text/x-shellscript"
+    content = file(var.config-onion)
+  }
+}

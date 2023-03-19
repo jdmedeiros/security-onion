@@ -13,6 +13,16 @@ type = string
 default = "ami-09cd747c78a9add63"
 }
 
+variable "analyst_ami" {
+  type = string
+  default = "ami-0aedf6b1cb669b4c7"
+}
+
+variable "analyst_type" {
+  type = string
+  default = "c5a.large"
+}
+
 variable "avail_zone" {
   type = string
   default = "us-east-1a"
