@@ -11,5 +11,7 @@
   hostnamectl set-hostname analyst
   yum -y update
   yum -y group install 'Development Tools'
+  sudo firewall-cmd --add-port=3389/tcp --permanent
+  sudo firewall-cmd --reload
 
 fi

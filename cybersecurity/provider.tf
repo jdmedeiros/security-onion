@@ -91,9 +91,9 @@ data "template_cloudinit_config" "config-analyst" {
   base64_encode = false
 
   part {
-    filename = var.cloud_config_desktop
+    filename = var.cloud_config_analyst
     content_type = "text/x-shellscript"
-    content = file(var.cloud_config_desktop)
+    content = file(var.config-analyst)
   }
 
   part {

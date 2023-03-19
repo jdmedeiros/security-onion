@@ -47,6 +47,11 @@ variable "cloud_config_onion" {
   default = "cloud-config-onion.sh"
 }
 
+
+variable "config-onion" {
+  default = "config-onion.sh"
+}
+
 variable "cloud_config_desktop" {
   default = "cloud-config-desktop.sh"
 }
@@ -55,8 +60,12 @@ variable "config-desktop" {
   default = "config-desktop.sh"
 }
 
-variable "config-onion" {
-  default = "config-onion.sh"
+variable "cloud_config_analyst" {
+  default = "cloud-config-analyst.sh"
+}
+
+variable "config-analyst" {
+  default = "config-analyst.sh"
 }
 
 variable "config-netplan" {
