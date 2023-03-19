@@ -27,5 +27,16 @@
   chown ubuntu:ubuntu /home/ubuntu/.xsession
   systemctl enable --now xrdp
 
+  apt-get -y install mono-devel
+  wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+  unzip /tmp/nm.zip -d /opt/
+  cd /opt/NetworkMiner*
+  sudo chmod +x NetworkMiner.exe
+  sudo chmod -R go+w AssembledFiles/
+  sudo chmod -R go+w Captures/
+
+  echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
+  sudo DEBIAN_FRONTEND=noninteractive apt-get -y  install wireshark qt5-image-formats-plugins qtwayland5 snmp-mibs-downloader geoipupdate geoip-database libjs-leaflet libjs-leaflet.markercluster wireshark-doc
+
   shutdown -hr 1
 fi
