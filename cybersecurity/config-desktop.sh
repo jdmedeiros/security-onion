@@ -18,11 +18,8 @@
   export DEBCONF_NONINTERACTIVE_SEEN=true
   apt-get -o DPkg::Options::=--force-confdef update
   apt-get -y -o DPkg::Options::=--force-confdef upgrade
-  apt-get -o DPkg::Options::=--force-confdef install -y xfce4 xfce4-goodies ostinato filezilla thunderbird git build-essential netfilter-persistent iptables-persistent chromium-browser filezilla xrdp gkrellm
+  apt-get -o DPkg::Options::=--force-confdef install -y xfce4 xfce4-goodies ostinato filezilla thunderbird git build-essential chromium-browser filezilla xrdp gkrellm
   adduser xrdp ssl-cert
-  iptables -t nat -A POSTROUTING -o ens5 -j MASQUERADE
-  iptables -t nat -A PREROUTING -i ens5 -p tcp -m multiport --dports 80,443 -j DNAT --to-destination 10.0.1.11
-  netfilter-persistent save
   echo xfce4-session > /home/ubuntu/.xsession
   chown ubuntu:ubuntu /home/ubuntu/.xsession
   systemctl enable --now xrdp
