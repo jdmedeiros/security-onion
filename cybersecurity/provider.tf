@@ -74,7 +74,7 @@ data "template_file" "kali-password" {
 
   vars = {
     userid = "kali",
-    userid = var.kali_userpw
+    userpw = var.kali_userpw
   }
 }
 
@@ -83,7 +83,7 @@ data "template_file" "desktop-password" {
 
   vars = {
     userid = "ubuntu",
-    userid = var.desktop_userpw
+    userpw = var.desktop_userpw
   }
 }
 
