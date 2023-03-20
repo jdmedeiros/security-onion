@@ -30,7 +30,7 @@ data "template_cloudinit_config" "config-desktop" {
   base64_encode = false
 
   part {
-    filename     = "change-password.sh"
+    filename     = "desktop-change-password.sh"
     content_type = "text/x-shellscript"
     content      = data.template_file.desktop-password.rendered
   }
@@ -57,6 +57,12 @@ data "template_cloudinit_config" "config-desktop" {
     filename = var.config-onion
     content_type = "text/x-shellscript"
     content = file(var.config-onion)
+  }
+
+  part {
+    filename = var.config-45-allow-colord
+    content_type = "text/plain"
+    content = file(var.config-45-allow-colord)
   }
 }
 
@@ -120,6 +126,11 @@ data "template_cloudinit_config" "config-onion" {
     content_type = "text/x-shellscript"
     content = file(var.config-NetworkMiner)
   }
+  part {
+    filename = var.config-45-allow-colord
+    content_type = "text/plain"
+    content = file(var.config-45-allow-colord)
+  }
 }
 
 data "template_cloudinit_config" "config-kali" {
@@ -127,7 +138,7 @@ data "template_cloudinit_config" "config-kali" {
   base64_encode = false
 
   part {
-    filename     = "change-password.sh"
+    filename     = "kali-change-password.sh"
     content_type = "text/x-shellscript"
     content      = data.template_file.kali-password.rendered
   }
@@ -139,20 +150,20 @@ data "template_cloudinit_config" "config-kali" {
   }
 
   part {
-    filename = var.config-desktop
+    filename = var.config-kali
     content_type = "text/x-shellscript"
-    content = file(var.config-desktop)
-  }
-
-  part {
-    filename = var.config-onion
-    content_type = "text/x-shellscript"
-    content = file(var.config-onion)
+    content = file(var.config-kali)
   }
 
   part {
     filename = var.config-NetworkMiner
     content_type = "text/x-shellscript"
     content = file(var.config-NetworkMiner)
+  }
+
+  part {
+    filename = var.config-45-allow-colord
+    content_type = "text/plain"
+    content = file(var.config-45-allow-colord)
   }
 }

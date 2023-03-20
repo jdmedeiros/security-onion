@@ -18,7 +18,7 @@
   export DEBCONF_NONINTERACTIVE_SEEN=true
   apt-get -o DPkg::Options::=--force-confdef update
   apt-get -y -o DPkg::Options::=--force-confdef upgrade
-  apt-get -o DPkg::Options::=--force-confdef install -y xfce4 xfce4-goodies ostinato filezilla thunderbird git build-essential chromium-browser filezilla xrdp gkrellm
+  apt-get -o DPkg::Options::=--force-confdef install -y xfce4 xfce4-goodies ostinato filezilla thunderbird git build-essential chromium-browser filezilla xrdp gkrellm remmina
   adduser xrdp ssl-cert
   echo xfce4-session > /home/ubuntu/.xsession
   chown ubuntu:ubuntu /home/ubuntu/.xsession
@@ -36,11 +36,8 @@
   cp /var/lib/cloud/instance/scripts/NetworkMiner.desktop /usr/share/applications/NetworkMiner.desktop
   chmod 777 /usr/share/applications/NetworkMiner.desktop
 
-  cp /var/lib/cloud/instance/scripts/45-allow-colord.pkla /etc/polkit-1/localauthority/50-local.d/45-allow-colord.pkla
-
   echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
   sudo DEBIAN_FRONTEND=noninteractive apt-get -y  install wireshark qt5-image-formats-plugins qtwayland5 snmp-mibs-downloader geoipupdate geoip-database libjs-leaflet libjs-leaflet.markercluster wireshark-doc
 
-  echo ubuntu:Passw0rd | sudo chpasswd
   reboot
 fi

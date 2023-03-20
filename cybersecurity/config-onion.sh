@@ -43,7 +43,5 @@ if [ "$1" = "run" ]; then
   swapon /swapfile
   echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
-  echo ubuntu:Passw0rd | sudo chpasswd
-
   reboot
 fi

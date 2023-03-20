@@ -87,3 +87,7 @@ variable "config-netplan" {
 variable "config-NetworkMiner" {
   default = "NetworkMiner.desktop"
 }
+
+variable "config-45-allow-colord" {
+  default = "45-allow-colord.sh"
+}

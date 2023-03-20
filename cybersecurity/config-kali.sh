@@ -16,6 +16,4 @@
   cp /var/lib/cloud/instance/scripts/NetworkMiner.desktop /usr/share/applications/NetworkMiner.desktop
   chmod 777 /usr/share/applications/NetworkMiner.desktop
 
-  echo kali:Passw0rd | sudo chpasswd
-
 fi
