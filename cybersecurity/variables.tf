@@ -8,6 +8,16 @@ variable "desktop_ami" {
   default = "ami-0557a15b87f6559cf"
 }
 
+variable "desktop_type" {
+  type = string
+  default = "c5a.large"
+}
+
+variable "desktop_userpw" {
+  description = "Insert the pasword for the user ubuntu"
+  type = string
+}
+
 variable "onion_ami" {
 type = string
 default = "ami-09cd747c78a9add63"
@@ -23,14 +33,14 @@ variable "kali_type" {
   default = "m5.large"
 }
 
+variable "kali_userpw" {
+  description = "Insert the pasword for the user kali"
+  type = string
+}
+
 variable "avail_zone" {
   type = string
   default = "us-east-1a"
-}
-
-variable "desktop_type" {
-  type = string
-  default = "c5a.large"
 }
 
 variable "onion_type" {
