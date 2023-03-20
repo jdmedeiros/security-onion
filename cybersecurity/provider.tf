@@ -86,14 +86,14 @@ data "template_cloudinit_config" "config-onion" {
   }
 }
 
-data "template_cloudinit_config" "config-analyst" {
+data "template_cloudinit_config" "config-kali" {
   gzip = false
   base64_encode = false
 
   part {
-    filename = var.cloud_config_analyst
+    filename = var.cloud_config_kali
     content_type = "text/x-shellscript"
-    content = file(var.config-analyst)
+    content = file(var.config-kali)
   }
 
   part {

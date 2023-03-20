@@ -22,6 +22,6 @@ output "eip_onion" {
   value = aws_eip.onion_public_ip.public_ip
 }
 
-output "eip_analyst" {
-  value = aws_eip.analyst_public_ip.public_ip
+output "eip_kali" {
+  value = aws_eip.kali_public_ip.public_ip
 }

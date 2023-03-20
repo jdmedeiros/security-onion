@@ -8,10 +8,10 @@
   trap 'exec 2>&4 1>&3' 0 1 2 3
   exec 1>$SCRIPT_LOG_DETAIL 2>&1
 
-  hostnamectl set-hostname analyst
-  yum -y update
-  yum -y group install 'Development Tools'
-  sudo firewall-cmd --add-port=3389/tcp --permanent
-  sudo firewall-cmd --reload
+  hostnamectl set-hostname kali
+  export DEBIAN_FRONTEND=noninteractive
+  export DEBCONF_NONINTERACTIVE_SEEN=true
+  apt-get -o DPkg::Options::=--force-confdef update
+  apt-get -y -o DPkg::Options::=--force-confdef upgrade
 
 fi

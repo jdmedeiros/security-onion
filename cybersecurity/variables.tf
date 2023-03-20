@@ -13,12 +13,12 @@ type = string
 default = "ami-09cd747c78a9add63"
 }
 
-variable "analyst_ami" {
+variable "kali_ami" {
   type = string
-  default = "ami-0aedf6b1cb669b4c7"
+  default = "ami-03ab4a380ec395e5d"
 }
 
-variable "analyst_type" {
+variable "kali_type" {
   type = string
   default = "c5a.large"
 }
@@ -60,12 +60,12 @@ variable "config-desktop" {
   default = "config-desktop.sh"
 }
 
-variable "cloud_config_analyst" {
-  default = "cloud-config-analyst.sh"
+variable "cloud_config_kali" {
+  default = "cloud-config-kali.sh"
 }
 
-variable "config-analyst" {
-  default = "config-analyst.sh"
+variable "config-kali" {
+  default = "config-kali.sh"
 }
 
 variable "config-netplan" {
