@@ -34,7 +34,8 @@
   sudo chmod -R go+w Captures/
 
   cp /var/lib/cloud/instance/scripts/NetworkMiner.desktop /usr/share/applications/NetworkMiner.desktop
-  chmod ugo+x /usr/share/applications/NetworkMiner.desktop
+  chmod 777 /usr/share/applications/NetworkMiner.desktop
+
   cp /var/lib/cloud/instance/scripts/45-allow-colord.pkla /etc/polkit-1/localauthority/50-local.d/45-allow-colord.pkla
 
   echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections

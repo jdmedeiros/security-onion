@@ -15,7 +15,7 @@ default = "ami-09cd747c78a9add63"
 
 variable "kali_ami" {
   type = string
-  default = "ami-0806aeac6585857b8"
+  default = "ami-007eaa7e3e876d4ae"
 }
 
 variable "kali_type" {
