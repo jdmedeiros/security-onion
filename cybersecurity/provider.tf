@@ -30,7 +30,7 @@ data "template_cloudinit_config" "config-desktop" {
   base64_encode = false
 
   part {
-    filename     = "desktop-change-password.sh"
+    filename     = var.desktop-change-password
     content_type = "text/x-shellscript"
     content      = data.template_file.desktop-password.rendered
   }
@@ -98,7 +98,7 @@ data "template_cloudinit_config" "config-onion" {
   base64_encode = false
 
   part {
-    filename     = "update-fstab.sh"
+    filename     = var.update-fstab
     content_type = "text/x-shellscript"
     content      = data.template_file.fstab.rendered
   }
@@ -138,7 +138,7 @@ data "template_cloudinit_config" "config-kali" {
   base64_encode = false
 
   part {
-    filename     = "kali-change-password.sh"
+    filename     = var.kali-change-password
     content_type = "text/x-shellscript"
     content      = data.template_file.kali-password.rendered
   }
