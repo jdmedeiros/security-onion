@@ -70,7 +70,7 @@ data "template_file" "fstab" {
 }
 
 data "template_file" "kali-password" {
-  template = file("${path.module}/update-password.tpl")
+  template = file("${path.module}/kali-change-password.tpl")
 
   vars = {
     userid = "kali",
@@ -79,7 +79,7 @@ data "template_file" "kali-password" {
 }
 
 data "template_file" "desktop-password" {
-  template = file("${path.module}/update-password.tpl")
+  template = file("${path.module}/desktop-change-password.tpl")
 
   vars = {
     userid = "ubuntu",
