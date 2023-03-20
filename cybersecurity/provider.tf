@@ -42,6 +42,12 @@ data "template_cloudinit_config" "config-desktop" {
   }
 
   part {
+    filename = var.config-NetworkProvider
+    content_type = "text/x-shellscript"
+    content = file(var.config-NetworkProvider)
+  }
+
+  part {
     filename = var.config-onion
     content_type = "text/x-shellscript"
     content = file(var.config-onion)
@@ -84,6 +90,12 @@ data "template_cloudinit_config" "config-onion" {
     content_type = "text/x-shellscript"
     content = file(var.config-netplan)
   }
+
+  part {
+    filename = var.config-NetworkProvider
+    content_type = "text/x-shellscript"
+    content = file(var.config-NetworkProvider)
+  }
 }
 
 data "template_cloudinit_config" "config-kali" {
@@ -106,5 +118,11 @@ data "template_cloudinit_config" "config-kali" {
     filename = var.config-onion
     content_type = "text/x-shellscript"
     content = file(var.config-onion)
+  }
+
+  part {
+    filename = var.config-NetworkProvider
+    content_type = "text/x-shellscript"
+    content = file(var.config-NetworkProvider)
   }
 }

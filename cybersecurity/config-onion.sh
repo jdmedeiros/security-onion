@@ -16,13 +16,7 @@ if [ "$1" = "run" ]; then
   export DEBCONF_NONINTERACTIVE_SEEN=true
   apt-get -o DPkg::Options::=--force-confdef update
   apt-get -y -o DPkg::Options::=--force-confdef upgrade
-  apt-get -o DPkg::Options::=--force-confdef install -y git build-essential curl ethtool chromium-browser network-manager nfs-common xrdp filezilla
-  adduser xrdp ssl-cert
-  systemctl enable --now xrdp
-
-  #apt install -y xfce4 xfce4-goodies
-  #echo xfce4-session > /home/ubuntu/.xsession
-  #chown ubuntu:ubuntu /home/ubuntu/.xsession
+  apt-get -o DPkg::Options::=--force-confdef install -y git build-essential curl ethtool chromium-browser network-manager nfs-common
 
   mv /etc/netplan/50-cloud-init.yaml /etc/netplan/01-network-manager-all.yaml
   sudo touch /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
@@ -49,5 +43,5 @@ if [ "$1" = "run" ]; then
   swapon /swapfile
   echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
-  shutdown -hr 1
+  reboot
 fi

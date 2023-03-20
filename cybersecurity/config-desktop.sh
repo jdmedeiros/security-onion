@@ -27,18 +27,18 @@
   apt-get -y install mono-devel
   wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
   unzip /tmp/nm.zip -d /opt/
-  cd /opt/NetworkMiner* || exit
+  mv /opt/NetworkMiner* /opt/NetworkMiner
+  cd /opt/NetworkMiner || exit
   sudo chmod +x NetworkMiner.exe
   sudo chmod -R go+w AssembledFiles/
   sudo chmod -R go+w Captures/
 
+  cp /var/lib/cloud/instance/scripts/NetworkMiner.desktop /usr/share/applications/NetworkMiner.desktop
+  chmod ugo+x /usr/share/applications/NetworkMiner.desktop
+  cp /var/lib/cloud/instance/scripts/45-allow-colord.pkla /etc/polkit-1/localauthority/50-local.d/45-allow-colord.pkla
+
   echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
   sudo DEBIAN_FRONTEND=noninteractive apt-get -y  install wireshark qt5-image-formats-plugins qtwayland5 snmp-mibs-downloader geoipupdate geoip-database libjs-leaflet libjs-leaflet.markercluster wireshark-doc
 
-  echo "#!/usr/bin/env bash" > /home/ubuntu/Desktop/NetworkMiner.sh
-  echo "mono /opt/NetworkMiner*/NetworkMiner.exe" >> /home/ubuntu/Desktop/NetworkMiner.sh
-  chown ubuntu:ubuntu /home/ubuntu/Desktop/NetworkMiner.sh
-  chmod ug+x /home/ubuntu/Desktop/NetworkMiner.sh
-
-  shutdown -hr 1
+  reboot
 fi

@@ -14,4 +14,18 @@
   apt-get -o DPkg::Options::=--force-confdef update
   apt-get -y -o DPkg::Options::=--force-confdef upgrade
 
+  apt-get -y install mono-devel
+  wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+  unzip /tmp/nm.zip -d /opt/
+  mv /opt/NetworkMiner* /opt/NetworkMiner
+  cd /opt/NetworkMiner || exit
+  sudo chmod +x NetworkMiner.exe
+  sudo chmod -R go+w AssembledFiles/
+  sudo chmod -R go+w Captures/
+
+  cp /var/lib/cloud/instance/scripts/NetworkMiner.desktop /usr/share/applications/NetworkMiner.desktop
+  chmod ugo+x /usr/share/applications/NetworkMiner.desktop
+  cp /var/lib/cloud/instance/scripts/45-allow-colord.pkla /etc/polkit-1/localauthority/50-local.d/45-allow-colord.pkla
+
+  reboot
 fi

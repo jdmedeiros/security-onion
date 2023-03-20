@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NetworkMiner
+Comment=
+Exec=\s/opt/NetworkMiner/NetworkMiner.exe
+Icon=gnome-network-properties
+Path=
+Terminal=false
+StartupNotify=false
