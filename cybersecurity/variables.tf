@@ -13,6 +13,16 @@ type = string
 default = "ami-09cd747c78a9add63"
 }
 
+variable "kali_ami" {
+  type = string
+  default = "ami-03ab4a380ec395e5d"
+}
+
+variable "kali_type" {
+  type = string
+  default = "c5a.large"
+}
+
 variable "avail_zone" {
   type = string
   default = "us-east-1a"
@@ -37,6 +47,11 @@ variable "cloud_config_onion" {
   default = "cloud-config-onion.sh"
 }
 
+
+variable "config-onion" {
+  default = "config-onion.sh"
+}
+
 variable "cloud_config_desktop" {
   default = "cloud-config-desktop.sh"
 }
@@ -45,8 +60,12 @@ variable "config-desktop" {
   default = "config-desktop.sh"
 }
 
-variable "config-onion" {
-  default = "config-onion.sh"
+variable "cloud_config_kali" {
+  default = "cloud-config-kali.sh"
+}
+
+variable "config-kali" {
+  default = "config-kali.sh"
 }
 
 variable "config-netplan" {
