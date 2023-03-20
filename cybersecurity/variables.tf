@@ -16,6 +16,7 @@ variable "desktop_type" {
 variable "desktop_userpw" {
   description = "Insert the pasword for the user ubuntu"
   type = string
+  sensitive   = true
 }
 
 variable "onion_ami" {
@@ -36,6 +37,7 @@ variable "kali_type" {
 variable "kali_userpw" {
   description = "Insert the pasword for the user kali"
   type = string
+  sensitive   = true
 }
 
 variable "avail_zone" {
@@ -53,7 +55,7 @@ variable "vpc_ep_svc_name" {
   default = "com.amazonaws.us-east-1.s3"
 }
 
-variable "cloud_config_onion" {
+variable "cloud-config-onion" {
   default = "cloud-config-onion.sh"
 }
 
@@ -62,7 +64,7 @@ variable "config-onion" {
   default = "config-onion.sh"
 }
 
-variable "cloud_config_desktop" {
+variable "cloud-config-desktop" {
   default = "cloud-config-desktop.sh"
 }
 
@@ -70,7 +72,7 @@ variable "config-desktop" {
   default = "config-desktop.sh"
 }
 
-variable "cloud_config_kali" {
+variable "cloud-config-kali" {
   default = "cloud-config-kali.sh"
 }
 
@@ -82,6 +84,6 @@ variable "config-netplan" {
   default = "50-cloud-init.yaml.patch"
 }
 
-variable "config-NetworkProvider" {
+variable "config-NetworkMiner" {
   default = "NetworkMiner.desktop"
 }

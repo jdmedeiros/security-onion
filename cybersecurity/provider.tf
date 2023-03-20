@@ -32,13 +32,13 @@ data "template_cloudinit_config" "config-desktop" {
   part {
     filename     = "change-password.sh"
     content_type = "text/x-shellscript"
-    content      = data.template_file.desktop-password
+    content      = data.template_file.desktop-password.rendered
   }
 
   part {
-    filename = var.cloud_config_desktop
+    filename = var.cloud-config-desktop
     content_type = "text/x-shellscript"
-    content = file(var.cloud_config_desktop)
+    content = file(var.cloud-config-desktop)
   }
 
   part {
@@ -48,9 +48,9 @@ data "template_cloudinit_config" "config-desktop" {
   }
 
   part {
-    filename = var.config-NetworkProvider
+    filename = var.config-NetworkMiner
     content_type = "text/x-shellscript"
-    content = file(var.config-NetworkProvider)
+    content = file(var.config-NetworkMiner)
   }
 
   part {
@@ -98,9 +98,9 @@ data "template_cloudinit_config" "config-onion" {
   }
 
   part {
-    filename = var.cloud_config_onion
+    filename = var.cloud-config-onion
     content_type = "text/x-shellscript"
-    content = file(var.cloud_config_onion)
+    content = file(var.cloud-config-onion)
   }
 
   part {
@@ -116,9 +116,9 @@ data "template_cloudinit_config" "config-onion" {
   }
 
   part {
-    filename = var.config-NetworkProvider
+    filename = var.config-NetworkMiner
     content_type = "text/x-shellscript"
-    content = file(var.config-NetworkProvider)
+    content = file(var.config-NetworkMiner)
   }
 }
 
@@ -129,13 +129,13 @@ data "template_cloudinit_config" "config-kali" {
   part {
     filename     = "change-password.sh"
     content_type = "text/x-shellscript"
-    content      = data.template_file.kali-password
+    content      = data.template_file.kali-password.rendered
   }
 
   part {
-    filename = var.cloud_config_kali
+    filename = var.cloud-config-kali
     content_type = "text/x-shellscript"
-    content = file(var.config-kali)
+    content = file(var.cloud-config-kali)
   }
 
   part {
@@ -151,8 +151,8 @@ data "template_cloudinit_config" "config-kali" {
   }
 
   part {
-    filename = var.config-NetworkProvider
+    filename = var.config-NetworkMiner
     content_type = "text/x-shellscript"
-    content = file(var.config-NetworkProvider)
+    content = file(var.config-NetworkMiner)
   }
 }
