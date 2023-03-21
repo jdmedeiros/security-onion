@@ -25,3 +25,11 @@ output "eip_onion" {
 output "eip_kali" {
   value = aws_eip.kali_public_ip.public_ip
 }
+
+output "eip_remnux" {
+  value = aws_eip.remnux_public_ip.public_ip
+}
+
+output "eip_silt" {
+  value = aws_eip.sift_public_ip.public_ip
+}
