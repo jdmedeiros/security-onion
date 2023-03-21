@@ -34,3 +34,13 @@ data "template_file" "sift-password" {
     userpw = var.sift_userpw
   }
 }
+
+
+data "template_file" "remnux-password" {
+  template = file("${path.module}/remnux-change-password.tpl")
+
+  vars = {
+    userid = "remnux",
+    userpw = var.remnux_userpw
+  }
+}
