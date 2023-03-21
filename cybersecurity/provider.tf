@@ -66,33 +66,6 @@ data "template_cloudinit_config" "config-desktop" {
   }
 }
 
-data "template_file" "fstab" {
-  template = file("${path.module}/update-fstab.tpl")
-
-  vars = {
-    onion_ip = aws_network_interface.onion_nic_private1.private_ip,
-    efs_ip = aws_efs_mount_target.onion2-mnt1.ip_address
-  }
-}
-
-data "template_file" "kali-password" {
-  template = file("${path.module}/kali-change-password.tpl")
-
-  vars = {
-    userid = "kali",
-    userpw = var.kali_userpw
-  }
-}
-
-data "template_file" "desktop-password" {
-  template = file("${path.module}/desktop-change-password.tpl")
-
-  vars = {
-    userid = "ubuntu",
-    userpw = var.desktop_userpw
-  }
-}
-
 data "template_cloudinit_config" "config-onion" {
   gzip = false
   base64_encode = false
@@ -153,6 +126,41 @@ data "template_cloudinit_config" "config-kali" {
     filename = var.config-kali
     content_type = "text/x-shellscript"
     content = file(var.config-kali)
+  }
+
+  part {
+    filename = var.config-NetworkMiner
+    content_type = "text/x-shellscript"
+    content = file(var.config-NetworkMiner)
+  }
+
+  part {
+    filename = var.config-45-allow-colord
+    content_type = "text/plain"
+    content = file(var.config-45-allow-colord)
+  }
+}
+
+data "template_cloudinit_config" "config-sift" {
+  gzip = false
+  base64_encode = false
+
+  part {
+    filename     = var.sift-change-password
+    content_type = "text/x-shellscript"
+    content      = data.template_file.sift-password.rendered
+  }
+
+  part {
+    filename = var.cloud-config-sift
+    content_type = "text/x-shellscript"
+    content = file(var.cloud-config-sift)
+  }
+
+  part {
+    filename = var.config-sift
+    content_type = "text/x-shellscript"
+    content = file(var.config-sift)
   }
 
   part {
