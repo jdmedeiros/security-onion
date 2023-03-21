@@ -66,33 +66,6 @@ data "template_cloudinit_config" "config-desktop" {
   }
 }
 
-data "template_file" "fstab" {
-  template = file("${path.module}/update-fstab.tpl")
-
-  vars = {
-    onion_ip = aws_network_interface.onion_nic_private1.private_ip,
-    efs_ip = aws_efs_mount_target.onion2-mnt1.ip_address
-  }
-}
-
-data "template_file" "kali-password" {
-  template = file("${path.module}/kali-change-password.tpl")
-
-  vars = {
-    userid = "kali",
-    userpw = var.kali_userpw
-  }
-}
-
-data "template_file" "desktop-password" {
-  template = file("${path.module}/desktop-change-password.tpl")
-
-  vars = {
-    userid = "ubuntu",
-    userpw = var.desktop_userpw
-  }
-}
-
 data "template_cloudinit_config" "config-onion" {
   gzip = false
   base64_encode = false
