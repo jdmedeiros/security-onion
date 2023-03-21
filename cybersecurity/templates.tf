@@ -1,3 +1,4 @@
+
 data "template_file" "fstab" {
   template = file("${path.module}/update-fstab.tpl")
 
@@ -25,11 +26,11 @@ data "template_file" "desktop-password" {
   }
 }
 
-data "template_file" "remnux-password" {
-  template = file("${path.module}/remnux-change-password.tpl")
+data "template_file" "sift-password" {
+  template = file("${path.module}/sift-change-password.tpl")
 
   vars = {
-    userid = "remnux",
-    userpw = var.remnux_userpw
+    userid = "sift",
+    userpw = var.sift_userpw
   }
 }

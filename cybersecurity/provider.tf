@@ -141,26 +141,26 @@ data "template_cloudinit_config" "config-kali" {
   }
 }
 
-data "template_cloudinit_config" "config-remnux" {
+data "template_cloudinit_config" "config-sift" {
   gzip = false
   base64_encode = false
 
   part {
-    filename     = var.remnux-change-password
+    filename     = var.sift-change-password
     content_type = "text/x-shellscript"
-    content      = data.template_file.remnux-password.rendered
+    content      = data.template_file.sift-password.rendered
   }
 
   part {
-    filename = var.cloud-config-remnux
+    filename = var.cloud-config-sift
     content_type = "text/x-shellscript"
-    content = file(var.cloud-config-remnux)
+    content = file(var.cloud-config-sift)
   }
 
   part {
-    filename = var.config-remnux
+    filename = var.config-sift
     content_type = "text/x-shellscript"
-    content = file(var.config-remnux)
+    content = file(var.config-sift)
   }
 
   part {
