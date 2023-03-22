@@ -1,15 +1,15 @@
 # security-onion
-Configure the infrastructure needed to work with Security Onion 2 on AWS
+Cyberops infrastructure:
 
-Creates a Kali instance and an Analyst VM instance
+1. Security Onion 2
+2. Kali Linux Cloud
+3. SANS SIFT Workstation
+4. REMnux Toolkit for Malware Analysts
+5. Windows Server 2022
 
-Create the infrastructure using Terraform.
-
-Connect to Onion server and follow the [Installation Instructions](https://docs.securityonion.net/en/2.3/installation.html). Recommendations are as follows:
+Connect to the Onion server and follow the [Installation Instructions](https://docs.securityonion.net/en/2.3/installation.html). Recommendations are as follows:
 
 https://user-images.githubusercontent.com/3796667/226188017-89548a42-2a18-478e-87df-35a08aeec555.mov
-
-
 
 **Users and passwords for GUI Desktop:**
 
