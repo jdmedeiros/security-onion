@@ -9,4 +9,20 @@ Connect to Onion server and follow the [Installation Instructions](https://docs.
 
 https://user-images.githubusercontent.com/3796667/226188017-89548a42-2a18-478e-87df-35a08aeec555.mov
 
-Select this branch if you do not want [SANS SIFT Workstation](https://www.sans.org/tools/sift-workstation/) and the [REMnux Virtual Appliance](https://remnux.org/)  
+Users and passwords for GUI Desktop:
+
+**SANS SIFT Workstation VM Appliance**
+
+* Login = sansforensics
+* Password = forensics
+
+**REMnux**
+
+* Login = remnux
+* Password = malware
+
+**Kali Linux**
+
+* Login = kali
+* Password = Passw0rd
+
