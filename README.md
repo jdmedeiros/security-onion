@@ -9,7 +9,8 @@ Connect to Onion server and follow the [Installation Instructions](https://docs.
 
 https://user-images.githubusercontent.com/3796667/226188017-89548a42-2a18-478e-87df-35a08aeec555.mov
 
-Users and passwords for GUI Desktop:
+
+**Users and passwords for GUI Desktop:**
 
 **Security Onion 2**
 
