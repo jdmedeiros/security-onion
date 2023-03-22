@@ -140,3 +140,73 @@ data "template_cloudinit_config" "config-kali" {
     content = file(var.config-45-allow-colord)
   }
 }
+
+data "template_cloudinit_config" "config-sift" {
+  gzip = false
+  base64_encode = false
+
+  part {
+    filename     = var.sift-change-password
+    content_type = "text/x-shellscript"
+    content      = data.template_file.sift-password.rendered
+  }
+
+  part {
+    filename = var.cloud-config-sift
+    content_type = "text/x-shellscript"
+    content = file(var.cloud-config-sift)
+  }
+
+  part {
+    filename = var.config-sift
+    content_type = "text/x-shellscript"
+    content = file(var.config-sift)
+  }
+
+  part {
+    filename = var.config-NetworkMiner
+    content_type = "text/x-shellscript"
+    content = file(var.config-NetworkMiner)
+  }
+
+  part {
+    filename = var.config-45-allow-colord
+    content_type = "text/plain"
+    content = file(var.config-45-allow-colord)
+  }
+}
+
+data "template_cloudinit_config" "config-remnux" {
+  gzip = false
+  base64_encode = false
+
+  part {
+    filename     = var.remnux-change-password
+    content_type = "text/x-shellscript"
+    content      = data.template_file.remnux-password.rendered
+  }
+
+  part {
+    filename = var.cloud-config-remnux
+    content_type = "text/x-shellscript"
+    content = file(var.cloud-config-remnux)
+  }
+
+  part {
+    filename = var.config-remnux
+    content_type = "text/x-shellscript"
+    content = file(var.config-remnux)
+  }
+
+  part {
+    filename = var.config-NetworkMiner
+    content_type = "text/x-shellscript"
+    content = file(var.config-NetworkMiner)
+  }
+
+  part {
+    filename = var.config-45-allow-colord
+    content_type = "text/plain"
+    content = file(var.config-45-allow-colord)
+  }
+}
