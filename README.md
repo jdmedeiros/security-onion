@@ -38,4 +38,4 @@ https://user-images.githubusercontent.com/3796667/226188017-89548a42-2a18-478e-8
 * Login = Administrator
 * Password = Passw0rd
 
-**Note**: _You have the option of changing the password run running terraform apply_
+**Note**: _Change the passwords in the variables, or remove the Default entry to insert new passwords!_
