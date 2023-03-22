@@ -5,7 +5,7 @@ variable "desktop_ami" {
 
 variable "desktop_type" {
   type = string
-  default = "c5a.large"
+  default = "t2.small"
 }
 
 variable "desktop_userpw" {

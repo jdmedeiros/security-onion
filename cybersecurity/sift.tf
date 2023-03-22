@@ -18,7 +18,7 @@ resource "aws_instance" "sift" {
     tags                                 = {
       "Name" = "Volume for sift"
     }
-    volume_size           = 64
+    volume_size           = 100
     volume_type           = "gp2"
   }
   user_data = data.template_cloudinit_config.config-sift.rendered
