@@ -21,7 +21,7 @@ data "template_file" "sift-password" {
   template = file("${path.module}/sift-change-password.tpl")
 
   vars = {
-    userid = "sift",
+    userid = "sansforensics",
     userpw = var.sift_userpw
   }
 }
