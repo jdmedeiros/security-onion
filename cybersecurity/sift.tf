@@ -25,7 +25,7 @@ resource "aws_instance" "sift" {
 }
 
 resource "aws_network_interface" "sift_nic_private1" {
-  private_ips         = ["10.0.1.12"]
+  private_ips         = ["10.0.1.14"]
   security_groups    = [
     aws_security_group.cyber_default.id,
   ]
@@ -37,7 +37,7 @@ resource "aws_network_interface" "sift_nic_private1" {
 }
 
 resource "aws_network_interface" "sift_nic_private2" {
-  private_ips         = ["10.0.2.12"]
+  private_ips         = ["10.0.2.14"]
   security_groups    = [
     aws_security_group.cyber_default.id,
   ]
@@ -49,7 +49,7 @@ resource "aws_network_interface" "sift_nic_private2" {
 }
 
 resource "aws_network_interface" "sift_nic_private3" {
-  private_ips         = ["10.0.3.12"]
+  private_ips         = ["10.0.3.14"]
   security_groups    = [
     aws_security_group.cyber_default.id,
   ]
@@ -61,7 +61,7 @@ resource "aws_network_interface" "sift_nic_private3" {
 }
 
 resource "aws_network_interface" "sift_nic_public1" {
-  private_ips         = ["10.0.0.12"]
+  private_ips         = ["10.0.0.14"]
   security_groups    = [
     aws_security_group.cyber_default.id,
   ]

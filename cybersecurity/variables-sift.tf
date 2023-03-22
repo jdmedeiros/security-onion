@@ -1,6 +1,6 @@
 variable "sift_ami" {
   type = string
-  default = "ami-0a7db25a6d60e8e4e"
+  default = "ami-0100e205dc2713ee9"
 }
 
 variable "sift_type" {
