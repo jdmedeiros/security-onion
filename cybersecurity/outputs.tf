@@ -26,7 +26,7 @@ output "eip_remnux" {
   value = aws_eip.remnux_public_ip.public_ip
 }
 
-output "eip_silt" {
+output "eip_sift" {
   value = aws_eip.sift_public_ip.public_ip
 }
 
