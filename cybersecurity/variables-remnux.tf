@@ -1,6 +1,6 @@
 variable "remnux_ami" {
   type = string
-  default = "ami-00118dd8add6c7104"
+  default = "ami-070b6adcc5582a92c"
 }
 
 variable "remnux_type" {
@@ -12,7 +12,6 @@ variable "remnux_userpw" {
   description = "Insert the pasword for the user remnux"
   type = string
   sensitive   = true
-  default = "Passw0rd"
 }
 
 variable "cloud-config-remnux" {

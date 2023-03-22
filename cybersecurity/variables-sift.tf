@@ -12,7 +12,6 @@ variable "sift_userpw" {
   description = "Insert the pasword for the user sift"
   type = string
   sensitive   = true
-  default = "Passw0rd"
 }
 
 variable "cloud-config-sift" {

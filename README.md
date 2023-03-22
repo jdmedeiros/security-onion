@@ -31,7 +31,7 @@ https://user-images.githubusercontent.com/3796667/226188017-89548a42-2a18-478e-8
 **Kali Linux**
 
 * Login = kali
-* Password = Passw0rd
+* Password = kali
 
 **Windows Server**
 
