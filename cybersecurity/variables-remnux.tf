@@ -12,6 +12,7 @@ variable "remnux_userpw" {
   description = "Insert the pasword for the user remnux"
   type = string
   sensitive   = true
+  default = "Passw0rd"
 }
 
 variable "cloud-config-remnux" {

@@ -12,6 +12,7 @@ variable "kali_userpw" {
   description = "Insert the pasword for the user kali"
   type = string
   sensitive   = true
+  default = "Passw0rd"
 }
 
 variable "cloud-config-kali" {

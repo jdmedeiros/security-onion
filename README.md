@@ -31,3 +31,9 @@ Users and passwords for GUI Desktop:
 * Login = kali
 * Password = Passw0rd
 
+**Windows Server**
+
+* Login = Administrator
+* Password = Passw0rd
+
+**Note**: _You have the option of changing the password run running terraform apply_
