@@ -11,7 +11,12 @@ https://user-images.githubusercontent.com/3796667/226188017-89548a42-2a18-478e-8
 
 Users and passwords for GUI Desktop:
 
-**SANS SIFT Workstation VM Appliance**
+**Security Onion 2**
+
+* Login = ubuntu
+* Password = Passw0rd
+
+**SANS SIFT Workstation**
 
 * Login = sansforensics
 * Password = forensics
