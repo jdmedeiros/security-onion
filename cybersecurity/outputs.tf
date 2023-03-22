@@ -29,3 +29,7 @@ output "eip_remnux" {
 output "eip_silt" {
   value = aws_eip.sift_public_ip.public_ip
 }
+
+output "eip_windows" {
+  value = aws_eip.winsrv_public_ip.public_ip
+}
