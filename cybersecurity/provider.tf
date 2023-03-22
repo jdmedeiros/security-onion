@@ -25,47 +25,6 @@ provider "aws" {
 provider "cloudinit" {
 }
 
-data "template_cloudinit_config" "config-desktop" {
-  gzip = false
-  base64_encode = false
-
-  part {
-    filename     = var.desktop-change-password
-    content_type = "text/x-shellscript"
-    content      = data.template_file.desktop-password.rendered
-  }
-
-  part {
-    filename = var.cloud-config-desktop
-    content_type = "text/x-shellscript"
-    content = file(var.cloud-config-desktop)
-  }
-
-  part {
-    filename = var.config-desktop
-    content_type = "text/x-shellscript"
-    content = file(var.config-desktop)
-  }
-
-  part {
-    filename = var.config-NetworkMiner
-    content_type = "text/x-shellscript"
-    content = file(var.config-NetworkMiner)
-  }
-
-  part {
-    filename = var.config-onion
-    content_type = "text/x-shellscript"
-    content = file(var.config-onion)
-  }
-
-  part {
-    filename = var.config-45-allow-colord
-    content_type = "text/plain"
-    content = file(var.config-45-allow-colord)
-  }
-}
-
 data "template_cloudinit_config" "config-onion" {
   gzip = false
   base64_encode = false

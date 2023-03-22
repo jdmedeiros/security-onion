@@ -13,7 +13,4 @@
   apt-get -o DPkg::Options::=--force-confdef update
   apt-get -y -o DPkg::Options::=--force-confdef upgrade
 
-  cp /var/lib/cloud/instance/scripts/NetworkMiner.desktop /usr/share/applications/NetworkMiner.desktop
-  chmod 777 /usr/share/applications/NetworkMiner.desktop
-
 fi

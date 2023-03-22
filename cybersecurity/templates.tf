@@ -17,15 +17,6 @@ data "template_file" "kali-password" {
   }
 }
 
-data "template_file" "desktop-password" {
-  template = file("${path.module}/desktop-change-password.tpl")
-
-  vars = {
-    userid = "ubuntu",
-    userpw = var.desktop_userpw
-  }
-}
-
 data "template_file" "sift-password" {
   template = file("${path.module}/sift-change-password.tpl")
 
